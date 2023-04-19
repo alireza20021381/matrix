@@ -1,1 +1,47 @@
-
+#include<iostream>
+using namespace std;
+struct students
+{
+	int id;
+	float grades[10];
+	int units[10];
+	float avg;
+};
+void Get_students(students list[], int n)
+{
+	for (int i = 0; i < n; i++)
+	{
+		float sumg = 0, sumu = 0;
+		cout << "Enter id : ";
+		cin >> list[i].id;
+		for (int j = 0; j < 10; j++)
+		{
+			cout << "Enter grade("<<j<<") : ";
+			cin >> list[i].grades[j];
+			cout << "Enter units number : ";
+			cin >> list[i].units[j];
+			sumg += list[i].grades[j] * list[i].units[j];
+			sumu += list[i].units[j];
+		}
+		list[i].avg = sumg / sumu;
+	}
+}
+int Top_student(students list[], int n)
+{
+	students top;
+	top.avg = list[0].avg;
+	for (int i = 1; i < n; i++)
+	{		
+		if (list[i].avg > top.avg)
+		{
+			top.avg = list[i].avg;
+		}
+	}
+	return top.avg;
+}
+int main()
+{
+	students list[3];
+	Get_students(list, 3);
+	cout << Top_student(list, 3);
+}
