@@ -47,6 +47,6 @@ students *p;
 p=new students[n];
 Get_students(p,n);
 Top_student(p,n);
-delete[p];
+delete [] p;
 return 0;
 }
