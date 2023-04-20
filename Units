@@ -3,7 +3,7 @@ using namespace std;
 struct students
 {
 	int id;
-	float grades[10];
+	float grades[10]; free
 	int units[10];
 	float avg;
 };
@@ -37,11 +37,16 @@ int Top_student(students list[], int n)
 			top.avg = list[i].avg;
 		}
 	}
-	return top.avg;
+	return top.id;
 }
 int main()
 {
-	students list[3];
-	Get_students(list, 3);
-	cout << Top_student(list, 3);
+int n;
+cin>>n;
+students *p;
+p=new students[n];
+Get_students(p,n);
+Top_student(p,n);
+delete[p];
+return 0;
 }
