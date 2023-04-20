@@ -3,7 +3,7 @@ using namespace std;
 struct students
 {
 	int id;
-	float grades[10]; free
+	float grades[10];
 	int units[10];
 	float avg;
 };
